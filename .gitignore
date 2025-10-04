@@ -31,7 +31,8 @@ venv.bak/
 # PyTorch
 *.pth
 *.pt
-!checkpoints/*.pt
+# Large model files (use Git LFS or external storage)
+checkpoints/*.pt
 
 # Jupyter Notebook
 .ipynb_checkpoints
