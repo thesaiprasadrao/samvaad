@@ -99,3 +99,7 @@ static/uploads/
 backup_*/
 *.bak
 *.backup
+
+
+./test_voice/*
+./index.html
