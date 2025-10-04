@@ -1,0 +1,2 @@
+# This file ensures the checkpoints directory is tracked by Git
+# Trained models will be saved here when you run train_alm.py

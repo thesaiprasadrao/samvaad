@@ -1,0 +1,68 @@
+# ALM Configuration File
+
+data:
+  root_dir: "."
+  metadata_file: "master_metadata.csv"
+  sample_rate: 16000
+  max_duration: 10.0
+  train_split: 0.7
+  val_split: 0.15
+  test_split: 0.15
+
+models:
+  transcription:
+    model_name: "facebook/wav2vec2-base-960h"
+    device: "cuda"
+    batch_size: 4
+    max_length: 512
+  
+  emotion:
+    model_name: "facebook/wav2vec2-base"
+    num_classes: 5
+    emotions: ["anger", "disgust", "fear", "happiness", "sadness"]
+    device: "cuda"
+    batch_size: 4
+  
+  cultural_context:
+    model_name: "facebook/wav2vec2-base"
+    num_classes: 2
+    contexts: ["speech", "non-speech"]
+    device: "cuda"
+    batch_size: 4
+
+training:
+  epochs: 15
+  learning_rate: 3e-4
+  weight_decay: 1e-4
+  patience: 5
+  save_dir: "checkpoints"
+  log_dir: "logs"
+  # Advanced training parameters
+  warmup_epochs: 3
+  lr_scheduler: "cosine"
+  gradient_clip_norm: 1.0
+  label_smoothing: 0.1
+  mixup_alpha: 0.2
+  cutmix_alpha: 1.0
+  # Data augmentation
+  use_augmentation: true
+  noise_factor: 0.01
+  time_shift_factor: 0.2
+  pitch_shift_factor: 2
+  # Ensemble training
+  use_ensemble: false
+  ensemble_models: 1
+  # GPU optimizations
+  batch_size: 4
+  max_duration: 5.0
+  memory_efficient: true
+
+inference:
+  device: "cuda"
+  batch_size: 1
+  output_format: "json"
+
+api:
+  host: "0.0.0.0"
+  port: 8000
+  debug: false

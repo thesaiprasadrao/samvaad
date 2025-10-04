@@ -1,0 +1,101 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual Environment
+venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+
+# PyTorch
+*.pth
+*.pt
+!checkpoints/*.pt
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# Environment variables
+.env
+.venv
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Logs
+*.log
+logs/
+
+# Temporary files
+*.tmp
+*.temp
+temp/
+tmp/
+
+# Audio files (except test samples)
+*.wav
+*.mp3
+*.flac
+*.m4a
+*.ogg
+!test_voice/*.wav
+!test_voice/*.mp3
+
+# Model files (except checkpoints)
+*.pkl
+*.joblib
+*.h5
+*.hdf5
+
+# Data files
+*.csv
+!master_metadata.csv
+
+# Results and reports
+*_results.json
+*_report.md
+!FINAL_ACCURACY_REPORT.md
+!ACCURACY_IMPROVEMENT_REPORT.md
+
+# Uploads
+uploads/
+static/uploads/
+
+# Backup files
+backup_*/
+*.bak
+*.backup
